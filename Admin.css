@@ -1,0 +1,546 @@
+﻿/* Admin.css */
+
+
+#adminModal .modal-dialog {
+    /* Set a custom maximum width */
+    max-width: 650px; /* Adjust this value (e.g., 550px, 700px) */
+    /* Ensure it centers properly on the screen */
+    margin-top: 50px; /* Optional: Adjust vertical position */
+}
+
+/* General modal styling for better integration with dark theme */
+#adminModal .modal-content, #notificationModal .modal-content {
+    background-color: #343a40; /* Dark background */
+    color: #f8f9fa; /* Light text */
+    border: 1px solid #495057; /* Slightly lighter border */
+}
+
+#adminModal .modal-header, #notificationModal .modal-header {
+    border-bottom: 1px solid #495057;
+}
+
+#adminModal .modal-footer, #notificationModal .modal-footer {
+    border-top: 1px solid #495057;
+}
+
+#adminModal .modal-title, #notificationModal .modal-title {
+    color: #f8f9fa;
+}
+
+#adminModal .close, #notificationModal .close {
+    color: #f8f9fa;
+    opacity: 0.7;
+}
+
+    #adminModal .close:hover, #notificationModal .close:hover {
+        opacity: 1;
+    }
+
+/* Form specific styles for the Add/Edit modals */
+#adminModal .form-group label {
+    color: #dee2e6; /* Lighter label color */
+    margin-bottom: 0.25rem; /* Smaller gap */
+    font-weight: 600;
+}
+
+#adminModal .form-control {
+    background-color: #495057; /* Darker input background */
+    color: #f8f9fa; /* Light input text */
+    border: 1px solid #6c757d; /* Input border */
+}
+
+    #adminModal .form-control:focus {
+        background-color: #495057;
+        color: #f8f9fa;
+        border-color: #80bdff; /* Standard focus border */
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+    }
+
+#adminModal .text-danger {
+    color: #dc3545 !important; /* Standard red for validation messages */
+}
+
+/* Styling for the "Upload Product Image" section */
+.image-upload-area {
+    border: 2px dashed #6c757d;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+    .image-upload-area:hover {
+        background-color: #495057;
+    }
+
+    .image-upload-area i {
+        color: #adb5bd;
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .image-upload-area p {
+        margin: 0;
+        color: #adb5bd;
+    }
+
+    /* Style for the file input itself (hidden) */
+    .image-upload-area input[type="file"] {
+        display: none;
+    }
+
+/* Adjust modal header text to match bold style */
+#addProductModalLabel {
+    font-weight: bold;
+}
+
+
+
+/* --- Admin Manage Products --- */
+.admin-container {
+    background-color: #f8f9fa; /* Light background for the overall page */
+    border-radius: 2rem;
+}
+
+.product-title {
+    font-size: 24px;
+    font-weight: 900;
+    color: #000;
+    font-family: 'League Spartan', sans-serif;
+    margin-top: 10px;
+}
+
+/* --- Table Wrapper (The White Card Effect) --- */
+.product-table-wrapper {
+    background-color: #fff; /* White background for the table area */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Important to keep the dark header corners rounded */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for lift */
+    border: 1px solid #e9ecef; /* Light border */
+}
+
+/* --- Table Header (Black Background from Image) --- */
+.admin-table thead {
+    background-color: #000; /* Black background for the header */
+    color: #fff; /* White text for header */
+}
+
+.admin-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+    .admin-table th {
+        /* Padding to match the look in the screenshot */
+        padding: 1rem 15px;
+        font-size: 14px;
+        gap: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-bottom: none;
+        text-align: center;
+    }
+
+    /* --- Table Body Rows (White with Clean Separators) --- */
+    .admin-table tbody tr {
+        /* Use a light border separator for a clean look */
+        border-top: 1px solid #dee2e6;
+    }
+
+    .admin-table tbody td {
+        /* Match padding to header */
+        padding: 1rem 1px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+/* --- Add Product Button (Blue in the Image) --- */
+.admin-add-btn {
+    background-color: #007bff; /* Standard Bootstrap blue, matches image */
+    border-color: #007bff;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+}
+
+/* --- Action Buttons Styling (To match the colors in the image) --- */
+/* The default Bootstrap info (Edit) and danger (Delete) look close enough, 
+   but we'll define the View button's style (Red in the screenshot) */
+
+.admin-btn-view {
+    background-color: #279F5D !important; /* Red color from the image (like btn-danger) */
+    border-color: #279F5D !important;
+    color: #fff !important;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    margin-left: 0.25rem;
+    font-weight: 600;
+}
+
+/* Overriding default Bootstrap button styles for consistency */
+.admin-btn-edit {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    background-color: #0088FF;
+    border-color: #0088FF;
+    color: #fff;
+    font-weight: 600;
+}
+
+.admin-btn-delete {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    font-weight: 600;
+}
+
+/* --- Admin Manage Orders --- */
+.order-status-dropdown {
+    width: 120px;
+    margin: 0px;
+    margin: 0 auto 0 20px;
+    border-radius: 10px;
+}
+
+/* --- Admin Manage Customers Buttons --- */
+.admin-btn-deactivate {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    font-weight: 600;
+}
+
+.admin-btn-view {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    font-weight: 600;
+}
+
+.admin-btn-delete {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    font-weight: 600;
+}
+
+.admin-btn-permanently {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    margin-top: 10px;
+}
+
+.admin-btn-reactive {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+}
+
+/* --- Admin Edit Product Modal --- */
+#adminModal .modal-content {
+    background-color: #fff; /* White background for the modal */
+    color: #000; /* Black text for content */
+    border-radius: 10px; /* Rounded corners for the modal */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Modal Header and Title --- */
+#adminModal .modal-header {
+    border-bottom: none;
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+    background-color: #000 !important;
+    border-bottom: none;
+    padding: 1.5rem;
+}
+
+#adminModal .modal-title {
+    color: #fff !important; /* Black title */
+    font-weight: 900;
+    font-size: 2rem; /* Adjusted for h5 tag and modern look */
+    font-family: 'League Spartan', sans-serif;
+    margin-bottom: 15px;
+}
+
+/* Adjust the close button to look good on white */
+#adminModal .close {
+    color: #fff;
+    opacity: 0.5;
+}
+
+    #adminModal .close:hover {
+        opacity: 1;
+    }
+
+/* --- Modal Body and Labels --- */
+#adminModal .modal-body {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+#adminModal .form-group label {
+    color: #000; /* Black labels */
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Custom Input Fields & Dropdowns (The Rounded Look) --- */
+.custom-input,
+.custom-input.form-control { /* Targets all custom inputs and dropdowns */
+    border-radius: 8px !important;
+    border: 1px solid #ced4da !important;
+    background-color: #fff !important;
+    color: #212529 !important;
+    padding: 0.75rem 1rem !important; /* Taller inputs */
+    font-size: 1rem !important;
+}
+
+    .custom-input.form-control:focus {
+        border-color: #80bdff !important;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25) !important;
+    }
+
+/* Ensure textarea inherits the same style */
+#adminModal textarea.custom-input {
+    resize: vertical;
+}
+
+
+/* --- Image Upload Area --- */
+.image-upload-area {
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #495057;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .image-upload-area:hover {
+        background-color: #e9ecef;
+    }
+
+    .image-upload-area i {
+        color: #495057;
+        font-size: 1.2rem;
+        margin-right: 8px;
+    }
+
+/* --- Modal Footer and Buttons --- */
+#adminModal .modal-footer {
+    border-top: none;
+    padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+/* Custom Save/Cancel Buttons (Larger and Rounded) */
+.custom-save-btn {
+    background-color: #28a745 !important; /* Green */
+    border-color: #28a745 !important;
+    border-radius: 8px !important;
+    padding: 0.55rem 1.25rem !important;
+    font-weight: bold !important;
+    font-size: 0.9rem !important;
+}
+
+.custom-cancel-btn {
+    background-color: #dc3545 !important; /* Red */
+    border-color: #dc3545 !important;
+    border-radius: 8px !important;
+    padding: 0.55rem 1.25rem !important;
+    font-weight: bold !important;
+    font-size: 0.9rem !important;
+}
+
+.modal-header .close {
+    /* Remove default button appearance */
+    background: transparent; /* No background color */
+    border: none; /* No border */
+    opacity: 1; /* Ensure it is fully visible */
+    /* Make it circular/square and position the 'X' */
+    width: 30px; /* Define the button area width */
+    height: 30px; /* Define the button area height */
+    /* Center the contained <span> */
+    display: flex;
+    align-items: center;
+    margin-top: -55px;
+    margin-left: 570px;
+    font-size: 2.5rem; /* Large enough 'X' symbol */
+    font-weight: 300; /* Use a thin 'X' if possible */
+    cursor: pointer; /* Indicate it's clickable */
+    transition: all 0.2s ease;
+}
+
+.form-check {
+    font-size: 0.9rem;
+    margin-top: -10px;
+}
+
+/* --- ViewProductModalContent.cshtml Styles --- */
+
+.product-image-container {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.product-view-image {
+    max-width: 50%;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-view-title {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: #fff; /* White text for the title */
+    margin-left: 20px;
+}
+
+.product-sizes-prices {
+    display: flex;
+    gap: 6rem;
+    text-align: center;
+    align-items: center;
+    margin-left: 210px;
+}
+
+.size-price {
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+}
+
+.size-name {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: -10px;
+}
+
+.product-description {
+    font-size: 17px;
+    font-family: 'League Spartan', sans-serif;
+    text-align: center;
+    font-weight: 600;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: -10px;
+}
+
+/* --- Admin DELETE Product Modal --- */
+
+.product-delete-body {
+    margin-top: 20px;
+    margin-bottom: -30px;
+}
+
+#viewCustomerModalLabel {
+    font-size: 1.8rem !important;
+    font-weight: 900;
+    font-family: 'League Spartan', sans-serif;
+}
+
+#viewCustomerModal .form-label {
+    font-weight: 600;
+}
+
+#statusConfirmModalLabel {
+    font-size: 1.3rem !important;
+    font-weight: 900;
+    font-family: 'League Spartan', sans-serif;
+}
+
+/* --- Admin REACTIVATE Product Modal --- */
+
+.product-reactivate-body {
+    margin-top: 20px;
+    margin-bottom: -30px;
+}
+
+/* --- Admin DELETE PERMANENTLY Product Modal --- */
+
+.product-permanently-body {
+    margin-top: 20px;
+    margin-bottom: -30px;
+}
+
+
+/* --- Admin Delete User Modal --- */
+
+#deleteCustomerModalLabel {
+    font-size: 1.3rem !important;
+    font-weight: 900;
+    font-family: 'League Spartan', sans-serif;
+}
+
+/* --- Sale Report --- */
+
+.card {
+    border-radius: 15px;
+}
+
+.row .card h6 {
+    font-size: 18px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+}
+
+.row .card h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+#btnDaily {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900;
+}
+
+    #btnDaily:hover {
+        background-color: #000; /* Darker blue for hover */
+        color: #fff; /* Ensure text stays readable */
+        outline: none;
+    }
+
+    #btnDaily.btn-primary,
+    #btnMonthly.btn-primary {
+        background-color: #000; /* your active blue */
+        color: #fff;
+        outline: none;
+    }
+
+
+#btnMonthly {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 900;
+}
+
+    #btnMonthly:hover {
+        background-color: #000; /* Darker blue for hover */
+        color: #fff; /* Ensure text stays readable */
+        outline: none;
+    }
+
+    #btnDaily.btn-outline-dark:hover,
+    #btnMonthly.btn-outline-dark:hover {
+        background-color: #000; /* dark gray */
+        color: #fff;
+        outline: none;
+    }

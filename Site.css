@@ -1,0 +1,525 @@
+﻿html, body {
+    height: 100%;
+    margin: 0 !important;
+    padding: 0;
+    padding-top: 0 !important;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f3f3f3;
+    [cite_start] /* Updated background color [cite: 55] */
+}
+
+main {
+    flex-grow: 1;
+}
+
+input::placeholder {
+    color: #aaa;
+    text-align: center;
+}
+
+footer {
+    font-size: 0.9rem;
+}
+
+.btn-dark {
+    background-color: #000;
+    border: none;
+}
+
+a {
+    color: #000;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+.navbar {
+    font-family: 'League Spartan', sans-serif;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+    .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .navbar a {
+        text-decoration: none;
+    }
+
+        .navbar a:hover {
+            opacity: 0.8;
+        }
+
+p {
+    margin-left: 0.2rem; /* optional for precise alignment */
+}
+
+.me-6 {
+    margin-right: 15rem !important;
+}
+
+.product-category-style {
+    opacity: 0.50;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.product-name-style {
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.product-price-style {
+    font-size: 1rem;
+    font-weight: 705;
+}
+
+.product-size-style {
+    font-size: 0.9rem;
+    font-weight: 700;
+    opacity: 90%;
+}
+
+.py-extra-large {
+    padding-top: 10rem !important;
+    padding-bottom: 10rem !important;
+}
+
+.shadow {
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.50) !important;
+}
+
+.force-spartan-font {
+    font-family: 'League Spartan', sans-serif !important;
+}
+
+.login-form-large-padding {
+    /* Set custom padding larger than 3rem */
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+}
+
+/* Desktop spacing */
+@media (max-width: 992px) {
+    .me-6 {
+        margin-right: 5rem !important;
+    }
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+    .navbar .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-icons,
+    .right-icons {
+        flex-direction: row;
+    }
+}
+
+/* Mobile layout (<768px) */
+@media (max-width: 767px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: center; /* ensures everything is centered horizontally */
+        text-align: center;
+        /* centers inline elements if needed */
+        padding-left: 0;
+        /* remove extra padding from container */
+        padding-right: 0;
+    }
+
+    /* Logo centered */
+    .navbar-brand {
+        order: 0;
+        margin-bottom: 1rem;
+        margin-left: auto; /* ensures logo centers regardless of other content */
+        margin-right: auto;
+    }
+
+    /* Combined icons row */
+    .navbar-icons-row {
+        order: 1;
+        display: flex !important;
+        justify-content: center;
+        gap: 1.5rem; /* space between icons */
+        width: auto;
+    }
+
+        /* Icon hover effect */
+        .navbar-icons-row a {
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+            .navbar-icons-row a:hover {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+
+    /* Hide desktop left/right icons */
+    .left-icons,
+    .right-icons {
+        display: none !important;
+    }
+}
+
+/* Footer responsive styling for small screens */
+@media (max-width: 767.98px) {
+    /* Footer container stacked and centered */
+    footer .container {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 2rem;
+    }
+
+    /* Section order for small screens */
+    footer .order-1 {
+        order: 1 !important;
+    }
+    /* Left */
+    footer .order-3 {
+        order: 2 !important;
+    }
+    /* Center */
+    footer .order-2 {
+        order: 3 !important;
+    }
+    /* Right */
+
+    /* Remove desktop-specific margins/paddings */
+    footer .ms-3,
+    footer .ms-md-5,
+    footer .ms-auto,
+    footer .mt-4,
+    footer .pt-4 {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Center social links and copyright text */
+    footer .order-2 .d-flex.gap-3,
+    footer .order-2 p {
+        justify-content: center !important; /* for flex container (icons) */
+        text-align: center !important; /* for copyright text */
+        width: 100%; /* ensures full-width centering */
+    }
+}
+
+/* Banner container */
+.home-banner {
+    width: 100%;
+    height: 550px; /* Adjusted to match the shorter image */
+    overflow: hidden;
+    margin: 0;
+    /* no extra spacing */
+}
+
+/* Banner image */
+.home-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* ensures image covers container */
+    display: block; /* removes small inline gaps */
+}
+
+.product-details-lato {
+    font-family: 'Lato', sans-serif !important;
+}
+
+/* Product Card Enhancements for Hover Effect */
+
+/* Ensure the image container is positioned for the overlay */
+.product-image-container {
+    position: relative; /* Allows absolute positioning of the overlay */
+    border-radius: 8px; /* Assuming rounded corners based on image_a0f7da.png */
+    overflow: hidden; /* Clips the overflow if needed */
+    transition: filter 0.3s ease;
+}
+
+/* Dim and darken the image on hover */
+.product-card a:hover .product-image-container img {
+    filter: brightness(0.6) grayscale(0.2); /* Darkens the image slightly on hover */
+    transition: filter 0.3s ease;
+}
+
+/* Style for the ORDER overlay button */
+.order-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the overlay perfectly */
+    padding: 1rem 2rem;
+    background-color: white;
+    color: black;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 50px; /* Pill shape for the button */
+    opacity: 0; /* Hidden by default */
+    pointer-events: none; /* Allows clicks to pass through when hidden */
+    transition: opacity 0.3s ease;
+    text-align: center;
+    width: 80%; /* Takes up 80% of the container width */
+    max-width: 200px; /* Optional maximum size for the button */
+}
+
+/* Show the overlay on hover over the entire product card link */
+.product-card a:hover .order-overlay {
+    opacity: 1;
+    pointer-events: auto; /* Enables clicking the button/link when visible */
+}
+
+/* Product Card Enhancements for Hover Effect */
+
+/* 1. Ensure the image container is positioned for the overlay */
+.product-image-container {
+    position: relative;
+    border-radius: 8px; /* Assuming rounded corners */
+    overflow: hidden;
+    transition: filter 0.3s ease;
+}
+
+/* 2. Dim and darken the image on hover */
+.product-card a:hover .product-image-container img {
+    filter: brightness(0.6) grayscale(0.2);
+    transition: filter 0.3s ease;
+}
+
+/* 3. Style for the ORDER overlay button */
+.order-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the overlay perfectly */
+    padding: 1rem 2rem;
+    background-color: white;
+    color: black;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 50px; /* Pill shape for the button */
+    opacity: 0; /* Hidden by default */
+    pointer-events: none; /* Allows clicks to pass through when hidden */
+    transition: opacity 0.3s ease;
+    text-align: center;
+    width: 80%; /* Takes up 80% of the container width */
+    max-width: 200px;
+}
+
+/* 4. Show the overlay on hover over the entire product card link */
+.product-card a:hover .order-overlay {
+    opacity: 1;
+    pointer-events: auto; /* Enables clicking the button/link when visible */
+}
+
+/* Modal Close Button Positioning */
+.modal-body .btn-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+}
+
+/* Ensure the size label text is dark when the button is inactive/outline */
+.size-label {
+    color: #6c757d; /* Default Bootstrap muted color */
+}
+
+/* When the size option button is active (turns black), make the text white */
+.size-option.active .price-text,
+.size-option.active .size-label {
+    color: #fff !important; /* Make price and size text white when selected */
+}
+
+/* --- Size Button Styling (Oval shape) --- */
+.size-button-oval {
+    /* Use padding to control the width and height */
+    width: auto;
+    padding: 8px 18px; /* Control horizontal spacing */
+    height: 40px;
+    /* Appearance */
+    border-radius: 999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 5px; /* Space between button and size label */
+    transition: all 0.2s ease-in-out;
+}
+
+    /* Unselected state: Black text inside a dark outline */
+    .size-button-oval:not(.active) {
+        color: #000;
+    }
+
+    /* Selected state: White text inside a black background */
+    .size-button-oval.active {
+        background-color: #000;
+        border-color: #000;
+        color: #fff;
+    }
+
+    /* Hover state: Dark gray background for unselected buttons */
+    .size-button-oval:hover:not(.active) {
+        background-color: #333;
+        border-color: #333;
+        color: #fff;
+    }
+
+/* Size label below the button */
+.size-label {
+    color: #555;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* --- Action Button Styling (ADD TO CART / CHECKOUT) --- */
+.action-button-oval {
+    /* CRITICAL: Set a fixed width to prevent stretching and allow centering */
+    width: 160px;
+    /* Ensure padding for height */
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    /* Ensure the pill shape */
+    border-radius: 999px !important;
+    /* Other visual styles */
+    font-family: 'League Spartan', sans-serif;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Fix for the outline button text color and hover */
+.btn-outline-dark.action-button-oval {
+    color: #000; /* Text is black when unhovered */
+}
+
+    .btn-outline-dark.action-button-oval:hover {
+        background-color: #000;
+        color: #fff;
+    }
+
+/* --- Size Option Button Hover Effect --- */
+
+/* When hovering over the size button, make it dark/black */
+.size-button-oval:hover:not(.active) {
+    background-color: #333; /* Dark gray on hover for unselected buttons */
+    border-color: #333;
+    color: #fff; /* Ensure price text turns white on hover */
+}
+
+/* --- New CSS Rules for Radio Button Integration --- */
+
+/* 1. Ensure the radio input is visually hidden but selectable */
+.product-size-option-label input[type="radio"] {
+    display: none;
+}
+
+    /* 2. Style the button when the *corresponding hidden radio button is checked* */
+    /* This rule applies the visual 'active' state to the button next to the checked radio */
+    .product-size-option-label input[type="radio"]:checked + .size-button-oval {
+        /* Apply your active state styles here, matching your existing .size-button-oval.active styles */
+        background-color: #000;
+        border-color: #000;
+        color: #fff;
+    }
+
+/* --- Quantity Spinner Removal --- */
+
+/* For Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* For Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Custom fix for the Right Sidebar Cart Modal */
+.cart-sidebar-fix {
+    /* Enforces the width (e.g., 300px for modal-sm, or wider if desired) */
+    max-width: 300px !important;
+    width: 100% !important;
+    /* Forces the modal to the right */
+    margin-right: 0;
+    margin-left: auto;
+    /* Makes the modal cover the full height of the viewport */
+    min-height: 100vh;
+}
+
+    /* Fixes the modal content itself to fill the height */
+    .cart-sidebar-fix .modal-content {
+        min-height: 100vh;
+    }
+
+
+/* --- Search Product Modal --- */
+
+/* --- Container for all Size/Price options --- */
+#modal-size-options {
+    /* Assuming this is inside a column/block that can handle centering */
+    display: flex;
+    justify-content: center; /* Center the entire group of size options */
+    margin-bottom: 20px;
+}
+
+/* --- Wrapper for each Price Button and Label (The vertical stack) --- */
+
+/* --- Size Button Styling (Oval shape) --- */
+.size-button-oval {
+    /* Use padding to control the width and height */
+    width: auto;
+    padding: 8px 18px; /* Control horizontal spacing */
+    height: 40px;
+    /* Appearance */
+    border-radius: 999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 5px; /* Space between button and size label */
+    transition: all 0.2s ease-in-out;
+    /* Base outline style for ALL buttons */
+    background-color: transparent;
+    border: 2px solid #000;
+}
+
+    /* Unselected state: Black text inside a dark outline */
+    .size-button-oval:not(.active) {
+        color: #000;
+    }
+
+    /* Selected state: White text inside a black background */
+    .size-button-oval.active {
+        background-color: #000;
+        border-color: #000;
+        color: #fff;
+    }
+
+    /* Hover state: Dark gray background for unselected buttons */
+    .size-button-oval:hover:not(.active) {
+        background-color: #333;
+        border-color: #333;
+        color: #fff;
+    }
+
+/* Size label below the button */
+.size-label {
+    color: #555;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-bottom: 0; /* Remove default paragraph margin */
+    /* Ensure the font matches your design */
+    font-family: Arial, sans-serif; /* Or another suitable font */
+}

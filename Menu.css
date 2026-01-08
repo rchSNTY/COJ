@@ -1,0 +1,251 @@
+﻿/* General Body and Container Styles */
+body {
+    font-family: Arial, sans-serif; /* Or your preferred font */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Light background if needed, or adjust to match your site */
+    color: #333;
+}
+
+.menu-header {
+    text-align: center;
+    padding: 40px 20px 20px 20px; /* More padding top/bottom */
+    background-color: #fff; /* White background for the header area */
+}
+
+.menu-title {
+    text-align: center;
+    font-size: 3em; /* Larger, bold 'MENU' title */
+    font-weight: 800; /* Extra bold */
+    color: #000;
+    margin: 0;
+    letter-spacing: 2px;
+    font-family: 'League Spartan', sans-serif;
+    margin-top: 7rem;
+    margin-bottom: 4rem;
+}
+
+/* Featured Section Header and Dropdown */
+.filter-dropdown-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: flex-end; /* Push the dropdown to the right */
+    align-items: center;
+    padding: 20px 50px; /* Padding for the entire filter bar */
+    background-color: #fff; /* Match header background */
+}
+
+
+.menu-category {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    margin-right: 58rem;
+    background-color: #fff;
+}
+
+.featured-label { /* If you add a "FEATURED" text label on the left */
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #000;
+    font-family: 'League Spartan', sans-serif;
+    margin-right: auto; /* Pushes the dropdown to the right */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.dropdown-form {
+    display: flex; /* To align the select if you add other elements */
+}
+
+.featured-dropdown {
+    padding: 8px 35px 8px 15px;
+    border: 2px solid #ccc;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    cursor: pointer;
+    appearance: none;
+    color: #333;
+    border-radius: 20px;
+    min-height: 55px;
+    background-repeat: no-repeat;
+    background-position: right 15px center !important;
+    background-size: 20px;
+    min-width: 150px; /* Ensure it's wide enough */
+}
+
+    .featured-dropdown:focus {
+        outline: none;
+        border-color: #000;
+    }
+
+/* Product Grid Layout */
+.featured-products-container {
+    display: grid;
+    /* This creates a responsive grid: 
+       - Auto-fit means it will try to fit as many columns as possible.
+       - Minmax(250px, 1fr) means each column will be at least 250px wide,
+         but can grow to fill available space. Adjust 250px for your item width. */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px; /* Space between grid items */
+    padding: 50px; /* Padding around the entire grid */
+    background-color: #fff; /* White background for the product display area */
+}
+
+/* Individual Product Item */
+.product-item {
+    display: flex;
+    flex-direction: column; /* Stack image and info vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    background-color: #fff; /* Individual item background, usually same as container */
+    padding: 0; /* Remove padding here, it's handled by img margin */
+    border-radius: 8px; /* Slightly rounded corners if desired */
+    overflow: hidden; /* Ensures image corners respect border-radius */
+    /* Optional: subtle shadow for depth */
+    /* box-shadow: 0 4px 10px rgba(0,0,0,0.05); */
+}
+
+.product-image-container {
+    position: relative; /* Essential: anchors the absolute-positioned overlay */
+    overflow: hidden; /* Hides parts of the image that might exceed fixed dimensions */
+    display: inline-block; /* Helps in positioning if the image isn't full width */
+    width: 100%; /* You may need to use fixed height here, e.g., height: 200px; */
+    transition: filter 0.3s ease;
+}
+
+.order-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Center the "ORDER" text */
+    transform: translate(-50%, -50%);
+    padding: 1rem 2rem;
+    align-items: center;
+    background-color: white;
+    /* Visual styles for the button/text */
+    color: black;
+    font-size: 1.2em;
+    font-weight: 900;
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: 2px;
+    width: 130px;
+    max-width: 200%;
+    height: 50px;
+    /* Hide by default and set up a smooth transition */
+    opacity: 0; /* Starts invisible */
+    transition: opacity 0.3s ease; /* Smooth hover effect */
+}
+
+.product-item a:hover .order-overlay {
+    opacity: 1; /* Becomes fully visible on hover */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+
+.product-item a:hover .product-image {
+    opacity: 0.8;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.product-image {
+    width: 100%; /* Make image fill its container width */
+    max-width: 200px; /* Max width to control image size */
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover; /* Ensures image fits without cropping, preserves aspect ratio */
+    margin-bottom: 15px; /* Space between image and text */
+}
+
+.product-info {
+    padding: 0 10px 20px 10px; /* Padding for text content */
+    width: 100%; /* Ensures info block takes full width to center text */
+}
+
+.product-category {
+    font-size: 0.85em;
+    color: #666; /* Lighter color for category */
+    margin: 0 0 5px 0;
+    font-weight: normal;
+}
+
+.product-name {
+    font-size: 1.2em; /* Product name size */
+    font-weight: bold;
+    color: #000;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+}
+
+.product-sizes {
+    display: flex;
+    justify-content: center; /* Center the price pairs */
+    flex-wrap: wrap; /* Allow sizes to wrap if many */
+    gap: 60px; /* Space between size-price pairs */
+    margin-top: 5px;
+}
+
+.size-price-pair {
+    display: flex;
+    flex-direction: column; /* Stack size name and price */
+    align-items: center;
+}
+
+    .size-price-pair .price-label {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 2px;
+    }
+
+    .size-price-pair .price-value {
+        font-size: 1.1em;
+        font-weight: 600;
+        color: #000;
+    }
+
+
+/* Responsive Adjustments (Optional but Recommended) */
+@media (max-width: 768px) {
+    .menu-title {
+        font-size: 2.5em;
+    }
+
+    .filter-dropdown-container, .featured-products-container {
+        padding: 20px;
+    }
+
+    .featured-products-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Smaller items on smaller screens */
+    }
+
+    .product-image {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-title {
+        font-size: 2em;
+    }
+
+    .filter-dropdown-container {
+        justify-content: center; /* Center dropdown on very small screens */
+    }
+
+    .featured-products-container {
+        grid-template-columns: 1fr; /* Single column on smallest screens */
+        padding: 15px;
+    }
+
+    .product-item {
+        margin: 0 auto; /* Center single column items */
+        max-width: 250px; /* Constrain width of single item */
+    }
+}
